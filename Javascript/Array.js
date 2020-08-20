@@ -55,4 +55,4 @@ const members = [
      return sum+number
  })
 
- //console.log(result6)
+ console.log(result6)
