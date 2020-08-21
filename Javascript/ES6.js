@@ -148,3 +148,24 @@
 
 // console.log('abcd'.padStart(10, '123'))
 // console.log('abcdef'.padStart(10, '123'))
+
+function sayHello() {
+    return "Hello" ;
+}
+
+function delaySayHello(){
+    return new Promise ( (resloved,rejected) => {
+        setTimeout(() => {
+            resloved('Delay Hello')
+        }, 1000);
+    })
+}
+
+async function main() {
+    let a = sayHello ()
+    let b = await delaySayHello()
+    console.log(a)
+    console.log(b)
+}
+
+main()
