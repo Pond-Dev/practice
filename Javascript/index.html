@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice</title>
-</head>
-<body>
-    <script src="TypeScript.js"></script>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--React CDN  -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>React</title>
+  </head>
+  <body>
+    <div id = "myApp">
+        <script type ="text/babel">
+        // 1.Class Component
+        class MyCard extends React.Component{
+            render() { 
+                return(
+                <div className="card">
+                    <div className="card-title">Title</div>
+                    <div className="card-content">Content</div>
+                    <MyName name ="Pond"/>
+                </div>
+                )
+            }
+        }
+        // 2. Function Component 
+        const MyName  = (props) => {
+            const name = props.name
+            return (
+                <h1> {name}</h1>
+            )
+        }
+        const myApp = document.getElementById('myApp');
+        ReactDOM.render(<MyCard />,myApp)
+        </script>
+    </div>
 </html>
