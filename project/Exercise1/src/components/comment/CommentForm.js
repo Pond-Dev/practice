@@ -1,20 +1,28 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class CommentForm extends Component {
-  handelSubmit = (e) => {
+  onSubmit = (e) => {
     e.preventDefault();
-    const messageform = {
+    const messageForm = {
       name: this.name.value,
       message: this.message.value,
       id: new Date(),
+      editing: false,
     };
-    console.log(messageform)
+    this.name.value = "";
+    this.message.value = "";
+    // using dispatch
+    this.props.dispatch({
+      type: "ADD_COMMENT",
+      messageForm,
+    });
   };
   render() {
     return (
       <div>
         <h1> Add Comment</h1>
-        <form onSubmit={this.handelSubmit}>
+        <form onSubmit={this.onSubmit}>
           <input
             required
             type="text"
@@ -31,11 +39,11 @@ class CommentForm extends Component {
           />{" "}
           <br />
           <br />
-          <button>Comment</button>
+          <button className="btn btn-light">Comment</button>
         </form>
       </div>
     );
   }
 }
 
-export default CommentForm;
+export default connect()(CommentForm);
