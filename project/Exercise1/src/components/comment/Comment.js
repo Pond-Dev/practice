@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class Comment extends Component {
+  constructor() {
+    super()
+    this.stage ={}
+  }
+  
   render() {
     return (
       <div>
