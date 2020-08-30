@@ -52,6 +52,7 @@ export class Register extends Component {
                     className="form-control form-control-lg"
                     placeholder="Email Address"
                     name="email"
+                    required
                     onChange={this.onChange.bind(this)}
                   />
                   <small className="form-text text-muted">
@@ -65,6 +66,7 @@ export class Register extends Component {
                     className="form-control form-control-lg"
                     placeholder="Password"
                     name="password"
+                    required
                     onChange={this.onChange.bind(this)}
                   />
                 </div>
@@ -74,6 +76,7 @@ export class Register extends Component {
                     className="form-control form-control-lg"
                     placeholder="Confirm Password"
                     name="password2"
+                    required
                     onChange={this.onChange.bind(this)}
                   />
                 </div>
